@@ -7,10 +7,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
+Plugin 'stlrefvim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'rhysd/vim-clang-format'
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
 Bundle 'scrooloose/nerdtree'
 Bundle 'lsdr/monokai'
 Bundle 'tomasr/molokai'
@@ -39,7 +42,7 @@ set number
 set mouse=a
 set backspace=indent,eol,start
  
-set undofile
+set noundofile
  
 nnoremap / /\v
 vnoremap / /\v
@@ -100,15 +103,15 @@ imap <F12> <Esc>:CtrlP<CR>
 nmap <C-F12> :CtrlP<CR>
 imap <C-F12> <Esc>:CtrlP<CR>
 
-
+nnoremap <C-j> :YcmCompleter GoTo<CR>
 
 let g:syntastic_c_checkers=['make','splint']
-let g:syntastic_cpp_checkers=['g++', 'clang++']
-let g:syntastic_aggregate_errors = 1
+"let g:syntastic_cpp_checkers=['g++', 'clang++']
+"let g:syntastic_aggregate_errors = 1
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_no_default_include_dirs = 1
+"let g:syntastic_cpp_no_default_include_dirs = 1
 let g:syntastic_cpp_auto_refresh_includes = 1
-let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -Wextra'
 
 let g:ycm_confirm_extra_conf = 0
